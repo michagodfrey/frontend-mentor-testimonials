@@ -1,0 +1,143 @@
+:root {
+  /* primary colors */
+  --clr-moderate-violet: hsl(263, 55%, 52%);
+  --clr-very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --clr-very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --clr-white: hsl(0, 0%, 100%);
+  /* neutral colors */
+  --clr-light-gray: hsl(0, 0%, 81%);
+  --clr-light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 13px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  background-color: #e8e8e8;
+}
+
+.grid {
+  display: grid;
+  place-content: center;
+  grid-gap: 1.5rem;
+  padding: 1rem;
+
+}
+
+.card {
+  padding: 2rem;
+  border-radius: .5rem;
+  max-width: 1000px;
+}
+
+.card__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card__header img {
+  border: 2px solid var(--clr-light-gray);
+  border-radius: 50%;
+  height: 2rem;
+}
+
+.card__header h3 {
+  margin: 2px;
+  font-weight: 500;
+  font-size: .9rem;
+}
+
+.card__name {
+  margin-left: 1rem;
+}
+
+.card__name span {
+  opacity: .5;
+}
+
+.card__intro {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.card__quote {
+  opacity: .7;
+  line-height: 1.4;
+}
+
+.card--A {
+  background-color: var(--clr-moderate-violet);
+  color: var(--clr-white);
+  background-image: url("images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: 80% 0;
+}
+
+.card--B {
+  background-color: var(--clr-very-dark-grayish-blue);
+  color: var(--clr-white);
+}
+
+.card--C {
+  background-color: var(--clr-white);
+  color: var(--clr-very-dark-grayish-blue);
+}
+
+.card--D {
+  background-color: var(--clr-very-dark-blackish-blue);
+  color: var(--clr-white);
+}
+
+.card--E {
+  background-color: var(--clr-white);
+  color: var(--clr-very-dark-grayish-blue);
+}
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media (min-width: 1400px) {
+
+
+  .card--A {
+    grid-area: card--A;
+  }
+
+  .card--B {
+    grid-area: card--B;
+  }
+
+  .card--C {
+    grid-area: card--C;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .card--D {
+    grid-area: card--D;
+  }
+
+  .card--E {
+    grid-area: card--E;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  body {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .grid {
+    grid-gap: 2rem;
+    grid-template-columns: repeat(4, 288px);
+    grid-template-rows: repeat(2, 310px);
+    grid-template-areas:
+    "card--A card--A card--B card--E"
+    "card--C card--D card--D card--E"
+  }
+}
