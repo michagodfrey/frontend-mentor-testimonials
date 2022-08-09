@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
 :root {
   /* primary colors */
   --clr-moderate-violet: hsl(263, 55%, 52%);
@@ -13,15 +15,18 @@ body {
   box-sizing: border-box;
   font-size: 13px;
   font-family: 'Barlow Semi Condensed', sans-serif;
-  background-color: #e8e8e8;
+  background-color: var(--clr-light-grayish-blue);
+}
+
+h1 {
+  font-size: 0px;
 }
 
 .grid {
   display: grid;
-  place-content: center;
   grid-gap: 1.5rem;
   padding: 1rem;
-
+  margin: 3rem 0;
 }
 
 .card {
@@ -99,8 +104,7 @@ body {
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
 
-@media (min-width: 1400px) {
-
+@media (min-width: 1000px) {
 
   .card--A {
     grid-area: card--A;
@@ -133,6 +137,7 @@ body {
   }
 
   .grid {
+    transform: scale(.8);
     grid-gap: 2rem;
     grid-template-columns: repeat(4, 288px);
     grid-template-rows: repeat(2, 310px);
