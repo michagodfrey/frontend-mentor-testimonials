@@ -26,13 +26,14 @@ h1 {
   display: grid;
   grid-gap: 1.5rem;
   padding: 1rem;
-  margin: 3rem 0;
+  margin: 3rem 0 0;
 }
 
 .card {
   padding: 2rem;
+  margin: auto;
   border-radius: .5rem;
-  max-width: 1000px;
+  max-width: 635px;
 }
 
 .card__header {
@@ -47,18 +48,19 @@ h1 {
   height: 2rem;
 }
 
-.card__header h3 {
+.card__header div {
+  margin-left: 1rem;
+}
+
+.card__name {
   margin: 2px;
   font-weight: 500;
   font-size: .9rem;
 }
 
-.card__name {
-  margin-left: 1rem;
-}
-
-.card__name span {
+.card__title {
   opacity: .5;
+  margin: 0;
 }
 
 .card__intro {
@@ -100,11 +102,20 @@ h1 {
   color: var(--clr-very-dark-grayish-blue);
 }
 
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
 
-@media (min-width: 1000px) {
+@media (min-width: 1160px) {
+
+  .card {
+    margin: 0;
+  }
 
   .card--A {
     grid-area: card--A;
@@ -137,7 +148,7 @@ h1 {
   }
 
   .grid {
-    transform: scale(.8);
+    transform: scale(.9);
     grid-gap: 2rem;
     grid-template-columns: repeat(4, 288px);
     grid-template-rows: repeat(2, 310px);
